@@ -6,10 +6,10 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-class Movie {
+class Movie(id: Int, name: String, rating: Double) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int,
-    var name: String,
-    var rating: Double
+    val id = id
+    var name = name
+    var rating = rating
 }

@@ -1,7 +1,7 @@
 package com.example.demo.dto
 
-class MovieDTO {
-    var id: Int,
-    var name: String,
-    var rating: Double
+class MovieDTO(id: Int, name: String, rating: Double) {
+    var id = id
+    var name = name
+    var rating = rating
 }
