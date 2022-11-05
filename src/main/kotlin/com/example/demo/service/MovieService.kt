@@ -4,4 +4,8 @@ import com.example.demo.dto.MovieDTO
 
 interface MovieService {
     fun createMovie(movieDTO: MovieDTO): MovieDTO
+
+    fun getMovies(): List<MovieDTO>
+
+    fun getMovie(id: Int): MovieDTO
 }

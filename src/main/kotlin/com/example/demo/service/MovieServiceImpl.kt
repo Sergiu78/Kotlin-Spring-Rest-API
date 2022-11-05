@@ -15,4 +15,17 @@ class MovieServiceImp(
         movieRepository.save(movie)
         return movieMapper.fromEntity(movie)
     }
+
+    override fun getMovies(): List<MovieDTO> {
+
+        val movies = movieRepository.getAllMovies()
+        return movies.map{
+            movieMapper.fromEntity(it)
+        }
+
+    }
+
+    override fun getMovie(id: Int): MovieDTO {
+        return movieMapper.fromEntity(movieRepository.findById(id).get())
+    }
 }
