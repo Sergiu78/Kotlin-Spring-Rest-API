@@ -27,4 +27,9 @@ class MovieResource(
     fun updateMovie(@RequestBody movieDTO: MovieDTO): ResponseEntity<MovieDTO> =
         ResponseEntity.ok(movieService.updateMovie(movieDTO))
 
+    @DeleteMapping("/{id}")
+    fun deleteMovie(@PathVariable id: Int): ResponseEntity<Unit>  =
+        ResponseEntity(movieService.deleteMovie(id), HttpStatus.NO_CONTENT)
+
+
 }

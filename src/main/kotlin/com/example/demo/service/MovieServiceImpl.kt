@@ -34,4 +34,8 @@ class MovieServiceImp(
         movieRepository.save(movieMapper.toEntity(movieDTO))
         return movieDTO
     }
+
+    override fun deleteMovie(id: Int) {
+        movieRepository.deleteById(id)
+    }
 }
