@@ -28,4 +28,10 @@ class MovieServiceImp(
     override fun getMovie(id: Int): MovieDTO {
         return movieMapper.fromEntity(movieRepository.findById(id).get())
     }
+
+    override fun updateMovie(movieDTO: MovieDTO): MovieDTO {
+        getMovie(movieDTO.id)
+        movieRepository.save(movieMapper.toEntity(movieDTO))
+        return movieDTO
+    }
 }

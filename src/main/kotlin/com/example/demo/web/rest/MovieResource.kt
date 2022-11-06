@@ -22,4 +22,9 @@ class MovieResource(
     @GetMapping("/{id}")
     fun getMovie(@PathVariable id: Int) =
         ResponseEntity.ok(movieService.getMovie(id))
+
+    @PutMapping
+    fun updateMovie(@RequestBody movieDTO: MovieDTO): ResponseEntity<MovieDTO> =
+        ResponseEntity.ok(movieService.updateMovie(movieDTO))
+
 }
